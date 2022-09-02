@@ -21,7 +21,7 @@ public class BoardsController {
 	
 	@GetMapping("/boards/{id}")
 	public RespDto<?> findById(@PathVariable Integer id) {
-		return new RespDto<>(1, "하나조회", boardsDao.findById(id));
+		return new RespDto<>(1, "하나조회", boardsDao.findByIdtoDetail(id));
 	}
 	
 	@GetMapping("/boards")
@@ -56,5 +56,6 @@ public class BoardsController {
 		boardsDao.delete(id);
 		return new RespDto<>(1, "삭제", null);
 	}
+	
 		
 }
